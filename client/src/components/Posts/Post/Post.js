@@ -25,6 +25,10 @@ const Post = ({ post, setCurrentId }) => {
 
   const user = JSON.parse(localStorage.getItem("profile"));
 
+  String.prototype.trimEllip = function (length) {
+    return this.length > length ? this.substring(0, length) + "..." : this;
+  }
+
   const Likes = () => {
     if (post.likes.length > 0) {
       return post.likes.find(
@@ -101,7 +105,7 @@ const Post = ({ post, setCurrentId }) => {
         </Typography>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {post.message}
+            {post.message.toString().trimEllip(100)}
           </Typography>
         </CardContent>
       </ButtonBase>
