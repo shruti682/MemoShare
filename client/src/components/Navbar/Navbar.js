@@ -42,7 +42,7 @@ function Navbar() {
           height="60"
         />
         <Typography className={classes.heading} variant="h2" align="center">
-          Memo Share
+          MemoShare
         </Typography>
       </Link>
       <Toolbar className={classes.toolbar}>
